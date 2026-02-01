@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Be My Valentine ?💕</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: #555;
+            font-style: italic;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background-color: #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Will you be my Valentine? 💘</h1>
+        <button id="yes" onclick="sayYes()">Yes 💖</button>
+        <button id="no" onmouseover="moveNo()">No 💔</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const messages = [
+            "udah ga sayang aku ya? 🥺",
+            "BEMM TIDAAA BISAAA WLEE",
+            "jahatt amay kamuu",
+            "yakinn?? 😢",
+            "gaa bolehh no haruss yes",
+            "mau gamau haruss yes. aku maksa!"
+        ];
+
+        function sayYes() {
+            alert("YAY!! I LOVEE U SO MUCHH BB! 💕");
+        }
+
+        function moveNo() {
+            const noBtn = document.getElementById("no");
+            const msg = document.getElementById("message");
+
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            msg.innerText = randomMsg;
+        }
+    </script>
+
+</body>
+</html>
